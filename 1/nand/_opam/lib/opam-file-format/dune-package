@@ -1,0 +1,85 @@
+(lang dune 3.19)
+(name opam-file-format)
+(version 2.2.0)
+(sections (lib .) (libexec .) (doc ../../doc/opam-file-format))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamBaseParser.cmi
+   opamBaseParser.cmt
+   opamBaseParser.cmti
+   opamBaseParser.cmx
+   opamBaseParser.ml
+   opamBaseParser.mli
+   opamLexer.cmi
+   opamLexer.cmt
+   opamLexer.cmti
+   opamLexer.cmx
+   opamLexer.ml
+   opamLexer.mli
+   opamParser.cmi
+   opamParser.cmt
+   opamParser.cmti
+   opamParser.cmx
+   opamParser.ml
+   opamParser.mli
+   opamParserTypes.cmi
+   opamParserTypes.cmt
+   opamParserTypes.cmx
+   opamParserTypes.ml
+   opamPrinter.cmi
+   opamPrinter.cmt
+   opamPrinter.cmti
+   opamPrinter.cmx
+   opamPrinter.ml
+   opamPrinter.mli
+   opam_file_format.a
+   opam_file_format.cma
+   opam_file_format.cmxa))
+ (libexec (opam_file_format.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-file-format)
+ (kind normal)
+ (synopsis "Parser and printer for the opam file syntax")
+ (archives (byte opam_file_format.cma) (native opam_file_format.cmxa))
+ (plugins (byte opam_file_format.cma) (native opam_file_format.cmxs))
+ (native_archives opam_file_format.a)
+ (modes byte native)
+ (obj_dir (private_dir .private))
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamBaseParser)
+    (visibility public)
+    (source
+     (path OpamBaseParser)
+     (intf (path opamBaseParser.mli))
+     (impl (path opamBaseParser.ml))))
+   (module
+    (obj_name opamLexer)
+    (visibility public)
+    (source
+     (path OpamLexer)
+     (intf (path opamLexer.mli))
+     (impl (path opamLexer.ml))))
+   (module
+    (obj_name opamParser)
+    (visibility public)
+    (source
+     (path OpamParser)
+     (intf (path opamParser.mli))
+     (impl (path opamParser.ml))))
+   (module
+    (obj_name opamParserTypes)
+    (visibility public)
+    (source (path OpamParserTypes) (impl (path opamParserTypes.ml))))
+   (module
+    (obj_name opamPrinter)
+    (visibility public)
+    (source
+     (path OpamPrinter)
+     (intf (path opamPrinter.mli))
+     (impl (path opamPrinter.ml)))))))

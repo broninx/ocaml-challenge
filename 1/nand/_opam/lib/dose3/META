@@ -1,0 +1,30 @@
+package "algo" (
+  directory = "algo"
+  version = "7.0.0"
+  description = ""
+  requires = "cudf dose3.common extlib ocamlgraph"
+  archive(byte) = "dose_algo.cma"
+  archive(native) = "dose_algo.cmxa"
+  plugin(byte) = "dose_algo.cma"
+  plugin(native) = "dose_algo.cmxs"
+)
+package "common" (
+  directory = "common"
+  version = "7.0.0"
+  description = ""
+  requires = "cudf extlib re.pcre stdlib-shims unix"
+  archive(byte) = "dose_common.cma"
+  archive(native) = "dose_common.cmxa"
+  plugin(byte) = "dose_common.cma"
+  plugin(native) = "dose_common.cmxs"
+)
+package "versioning" (
+  directory = "versioning"
+  version = "7.0.0"
+  description = ""
+  requires = "cudf dose3.common extlib"
+  archive(byte) = "dose_versioning.cma"
+  archive(native) = "dose_versioning.cmxa"
+  plugin(byte) = "dose_versioning.cma"
+  plugin(native) = "dose_versioning.cmxs"
+)

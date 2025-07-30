@@ -1,0 +1,7 @@
+version = "2.1.6"
+description = "OCaml Package Manager client and CLI library"
+requires = "base64 cmdliner opam-repository opam-solver opam-state re"
+archive(byte) = "opam_client.cma"
+archive(native) = "opam_client.cmxa"
+plugin(byte) = "opam_client.cma"
+plugin(native) = "opam_client.cmxs"

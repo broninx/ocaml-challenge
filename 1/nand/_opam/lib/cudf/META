@@ -1,0 +1,7 @@
+version = "0.10"
+description = ""
+requires = "extlib"
+archive(byte) = "cudf.cma"
+archive(native) = "cudf.cmxa"
+plugin(byte) = "cudf.cma"
+plugin(native) = "cudf.cmxs"

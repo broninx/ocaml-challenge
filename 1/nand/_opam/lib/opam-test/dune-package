@@ -1,0 +1,8 @@
+(lang dune 3.19)
+(name opam-test)
+(version 0.1.0)
+(sections (lib .) (bin ../../bin) (doc ../../doc/opam-test))
+(files
+ (lib (META dune-package opam))
+ (bin (opam-test))
+ (doc (CHANGES.md LICENSE.txt README.md)))

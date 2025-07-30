@@ -1,0 +1,12 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/opam-test/META"
+  "_build/install/default/lib/opam-test/dune-package"
+  "_build/install/default/lib/opam-test/opam"
+]
+bin: "_build/install/default/bin/opam-test"
+doc: [
+  "_build/install/default/doc/opam-test/CHANGES.md"
+  "_build/install/default/doc/opam-test/LICENSE.txt"
+  "_build/install/default/doc/opam-test/README.md"
+]

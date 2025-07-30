@@ -1,0 +1,162 @@
+(lang dune 3.19)
+(name mccs)
+(version 1.1+19)
+(sections (lib .) (libexec .) (doc ../../doc/mccs) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   dune-package
+   glpk/internal/libmccs_glpk_stubs.a
+   glpk/internal/mccs_glpk.a
+   glpk/internal/mccs_glpk.cma
+   glpk/internal/mccs_glpk.cmxa
+   glpk/internal/ocaml_mccs_glpk.cmi
+   glpk/internal/ocaml_mccs_glpk.cmt
+   glpk/internal/ocaml_mccs_glpk.cmx
+   glpk/internal/ocaml_mccs_glpk.ml
+   libmccs_stubs.a
+   mccs.a
+   mccs.cma
+   mccs.cmi
+   mccs.cmt
+   mccs.cmti
+   mccs.cmx
+   mccs.cmxa
+   mccs.ml
+   mccs.mli
+   opam))
+ (libexec (glpk/internal/mccs_glpk.cmxs mccs.cmxs))
+ (doc (CHANGES.md README.md))
+ (stublibs (dllmccs_glpk_stubs.so dllmccs_stubs.so)))
+(library
+ (name mccs)
+ (kind normal)
+ (archives (byte mccs.cma) (native mccs.cmxa))
+ (plugins (byte mccs.cma) (native mccs.cmxs))
+ (foreign_objects
+  changed_criteria.o
+  constraint_generation.o
+  count_criteria.o
+  cudf_reductions.o
+  cudf_tools.o
+  glpk_solver.o
+  lexagregate_combiner.o
+  lp_solver.o
+  mccs_stubs.o
+  mccscudf.o
+  new_criteria.o
+  notuptodate_criteria.o
+  removed_criteria.o)
+ (foreign_archives (archives (for all) (files libmccs_stubs.a)))
+ (foreign_dll_files ../stublibs/dllmccs_stubs.so)
+ (native_archives mccs.a)
+ (requires cudf mccs.glpk.internal)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name mccs)
+   (visibility public)
+   (source (path Mccs) (intf (path mccs.mli)) (impl (path mccs.ml))))))
+(library
+ (name mccs.glpk.internal)
+ (kind normal)
+ (archives
+  (byte glpk/internal/mccs_glpk.cma)
+  (native glpk/internal/mccs_glpk.cmxa))
+ (plugins
+  (byte glpk/internal/mccs_glpk.cma)
+  (native glpk/internal/mccs_glpk.cmxs))
+ (foreign_objects
+  glpk/internal/advbas.o
+  glpk/internal/alloc.o
+  glpk/internal/avl.o
+  glpk/internal/bfd.o
+  glpk/internal/btf.o
+  glpk/internal/btfint.o
+  glpk/internal/cfg.o
+  glpk/internal/cfg1.o
+  glpk/internal/cfg2.o
+  glpk/internal/clqcut.o
+  glpk/internal/covgen.o
+  glpk/internal/cpxbas.o
+  glpk/internal/dlsup.o
+  glpk/internal/dmp.o
+  glpk/internal/env.o
+  glpk/internal/error.o
+  glpk/internal/fhv.o
+  glpk/internal/fhvint.o
+  glpk/internal/fpump.o
+  glpk/internal/fvs.o
+  glpk/internal/gcd.o
+  glpk/internal/glpapi06.o
+  glpk/internal/glpapi09.o
+  glpk/internal/glpapi10.o
+  glpk/internal/glpapi12.o
+  glpk/internal/glpapi13.o
+  glpk/internal/glpios01.o
+  glpk/internal/glpios02.o
+  glpk/internal/glpios03.o
+  glpk/internal/glpios07.o
+  glpk/internal/glpios09.o
+  glpk/internal/glpios11.o
+  glpk/internal/glpios12.o
+  glpk/internal/glpscl.o
+  glpk/internal/gmicut.o
+  glpk/internal/gmigen.o
+  glpk/internal/ifu.o
+  glpk/internal/jd.o
+  glpk/internal/ks.o
+  glpk/internal/luf.o
+  glpk/internal/lufint.o
+  glpk/internal/mc13d.o
+  glpk/internal/mc21a.o
+  glpk/internal/mirgen.o
+  glpk/internal/mt1.o
+  glpk/internal/npp1.o
+  glpk/internal/npp2.o
+  glpk/internal/npp3.o
+  glpk/internal/npp4.o
+  glpk/internal/npp5.o
+  glpk/internal/prob1.o
+  glpk/internal/prob2.o
+  glpk/internal/prob4.o
+  glpk/internal/prob5.o
+  glpk/internal/proxy.o
+  glpk/internal/proxy1.o
+  glpk/internal/rng.o
+  glpk/internal/rng1.o
+  glpk/internal/round2n.o
+  glpk/internal/scf.o
+  glpk/internal/scfint.o
+  glpk/internal/sgf.o
+  glpk/internal/spv.o
+  glpk/internal/spxat.o
+  glpk/internal/spxchuzc.o
+  glpk/internal/spxchuzr.o
+  glpk/internal/spxlp.o
+  glpk/internal/spxnt.o
+  glpk/internal/spxprim.o
+  glpk/internal/spxprob.o
+  glpk/internal/spychuzc.o
+  glpk/internal/spychuzr.o
+  glpk/internal/spydual.o
+  glpk/internal/stdc.o
+  glpk/internal/stdout.o
+  glpk/internal/sva.o
+  glpk/internal/time.o
+  glpk/internal/tls.o
+  glpk/internal/triang.o
+  glpk/internal/wclique.o
+  glpk/internal/wclique1.o)
+ (foreign_archives
+  (archives (for all) (files glpk/internal/libmccs_glpk_stubs.a)))
+ (foreign_dll_files ../stublibs/dllmccs_glpk_stubs.so)
+ (native_archives glpk/internal/mccs_glpk.a)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ocaml_mccs_glpk)
+   (visibility public)
+   (source
+    (path Ocaml_mccs_glpk)
+    (impl (path glpk/internal/ocaml_mccs_glpk.ml))))))

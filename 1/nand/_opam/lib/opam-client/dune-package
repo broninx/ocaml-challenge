@@ -1,0 +1,308 @@
+(lang dune 3.19)
+(name opam-client)
+(version 2.1.6)
+(sections (lib .) (libexec .) (doc ../../doc/opam-client))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamAction.cmi
+   opamAction.cmt
+   opamAction.cmti
+   opamAction.cmx
+   opamAction.ml
+   opamAction.mli
+   opamAdminCheck.cmi
+   opamAdminCheck.cmt
+   opamAdminCheck.cmti
+   opamAdminCheck.cmx
+   opamAdminCheck.ml
+   opamAdminCheck.mli
+   opamAdminCommand.cmi
+   opamAdminCommand.cmt
+   opamAdminCommand.cmti
+   opamAdminCommand.cmx
+   opamAdminCommand.ml
+   opamAdminCommand.mli
+   opamAdminRepoUpgrade.cmi
+   opamAdminRepoUpgrade.cmt
+   opamAdminRepoUpgrade.cmti
+   opamAdminRepoUpgrade.cmx
+   opamAdminRepoUpgrade.ml
+   opamAdminRepoUpgrade.mli
+   opamArg.cmi
+   opamArg.cmt
+   opamArg.cmti
+   opamArg.cmx
+   opamArg.ml
+   opamArg.mli
+   opamArgTools.cmi
+   opamArgTools.cmt
+   opamArgTools.cmti
+   opamArgTools.cmx
+   opamArgTools.ml
+   opamArgTools.mli
+   opamAuxCommands.cmi
+   opamAuxCommands.cmt
+   opamAuxCommands.cmti
+   opamAuxCommands.cmx
+   opamAuxCommands.ml
+   opamAuxCommands.mli
+   opamBase64Compat.cmi
+   opamBase64Compat.cmt
+   opamBase64Compat.cmti
+   opamBase64Compat.cmx
+   opamBase64Compat.ml
+   opamBase64Compat.mli
+   opamCLIVersion.cmi
+   opamCLIVersion.cmt
+   opamCLIVersion.cmti
+   opamCLIVersion.cmx
+   opamCLIVersion.ml
+   opamCLIVersion.mli
+   opamCliMain.cmi
+   opamCliMain.cmt
+   opamCliMain.cmti
+   opamCliMain.cmx
+   opamCliMain.ml
+   opamCliMain.mli
+   opamClient.cmi
+   opamClient.cmt
+   opamClient.cmti
+   opamClient.cmx
+   opamClient.ml
+   opamClient.mli
+   opamClientConfig.cmi
+   opamClientConfig.cmt
+   opamClientConfig.cmti
+   opamClientConfig.cmx
+   opamClientConfig.ml
+   opamClientConfig.mli
+   opamCommands.cmi
+   opamCommands.cmt
+   opamCommands.cmti
+   opamCommands.cmx
+   opamCommands.ml
+   opamCommands.mli
+   opamConfigCommand.cmi
+   opamConfigCommand.cmt
+   opamConfigCommand.cmti
+   opamConfigCommand.cmx
+   opamConfigCommand.ml
+   opamConfigCommand.mli
+   opamGitVersion.cmi
+   opamGitVersion.cmt
+   opamGitVersion.cmti
+   opamGitVersion.cmx
+   opamGitVersion.ml
+   opamGitVersion.mli
+   opamInitDefaults.cmi
+   opamInitDefaults.cmt
+   opamInitDefaults.cmti
+   opamInitDefaults.cmx
+   opamInitDefaults.ml
+   opamInitDefaults.mli
+   opamListCommand.cmi
+   opamListCommand.cmt
+   opamListCommand.cmti
+   opamListCommand.cmx
+   opamListCommand.ml
+   opamListCommand.mli
+   opamLockCommand.cmi
+   opamLockCommand.cmt
+   opamLockCommand.cmti
+   opamLockCommand.cmx
+   opamLockCommand.ml
+   opamLockCommand.mli
+   opamPinCommand.cmi
+   opamPinCommand.cmt
+   opamPinCommand.cmti
+   opamPinCommand.cmx
+   opamPinCommand.ml
+   opamPinCommand.mli
+   opamRepositoryCommand.cmi
+   opamRepositoryCommand.cmt
+   opamRepositoryCommand.cmti
+   opamRepositoryCommand.cmx
+   opamRepositoryCommand.ml
+   opamRepositoryCommand.mli
+   opamSolution.cmi
+   opamSolution.cmt
+   opamSolution.cmti
+   opamSolution.cmx
+   opamSolution.ml
+   opamSolution.mli
+   opamSwitchCommand.cmi
+   opamSwitchCommand.cmt
+   opamSwitchCommand.cmti
+   opamSwitchCommand.cmx
+   opamSwitchCommand.ml
+   opamSwitchCommand.mli
+   opam_client.a
+   opam_client.cma
+   opam_client.cmxa))
+ (libexec (opam_client.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-client)
+ (kind normal)
+ (synopsis "OCaml Package Manager client and CLI library")
+ (archives (byte opam_client.cma) (native opam_client.cmxa))
+ (plugins (byte opam_client.cma) (native opam_client.cmxs))
+ (native_archives opam_client.a)
+ (requires opam-state opam-solver opam-repository re base64 cmdliner)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamAction)
+    (visibility public)
+    (source
+     (path OpamAction)
+     (intf (path opamAction.mli))
+     (impl (path opamAction.ml))))
+   (module
+    (obj_name opamAdminCheck)
+    (visibility public)
+    (source
+     (path OpamAdminCheck)
+     (intf (path opamAdminCheck.mli))
+     (impl (path opamAdminCheck.ml))))
+   (module
+    (obj_name opamAdminCommand)
+    (visibility public)
+    (source
+     (path OpamAdminCommand)
+     (intf (path opamAdminCommand.mli))
+     (impl (path opamAdminCommand.ml))))
+   (module
+    (obj_name opamAdminRepoUpgrade)
+    (visibility public)
+    (source
+     (path OpamAdminRepoUpgrade)
+     (intf (path opamAdminRepoUpgrade.mli))
+     (impl (path opamAdminRepoUpgrade.ml))))
+   (module
+    (obj_name opamArg)
+    (visibility public)
+    (source (path OpamArg) (intf (path opamArg.mli)) (impl (path opamArg.ml))))
+   (module
+    (obj_name opamArgTools)
+    (visibility public)
+    (source
+     (path OpamArgTools)
+     (intf (path opamArgTools.mli))
+     (impl (path opamArgTools.ml))))
+   (module
+    (obj_name opamAuxCommands)
+    (visibility public)
+    (source
+     (path OpamAuxCommands)
+     (intf (path opamAuxCommands.mli))
+     (impl (path opamAuxCommands.ml))))
+   (module
+    (obj_name opamBase64Compat)
+    (visibility public)
+    (source
+     (path OpamBase64Compat)
+     (intf (path opamBase64Compat.mli))
+     (impl (path opamBase64Compat.ml))))
+   (module
+    (obj_name opamCLIVersion)
+    (visibility public)
+    (source
+     (path OpamCLIVersion)
+     (intf (path opamCLIVersion.mli))
+     (impl (path opamCLIVersion.ml))))
+   (module
+    (obj_name opamCliMain)
+    (visibility public)
+    (source
+     (path OpamCliMain)
+     (intf (path opamCliMain.mli))
+     (impl (path opamCliMain.ml))))
+   (module
+    (obj_name opamClient)
+    (visibility public)
+    (source
+     (path OpamClient)
+     (intf (path opamClient.mli))
+     (impl (path opamClient.ml))))
+   (module
+    (obj_name opamClientConfig)
+    (visibility public)
+    (source
+     (path OpamClientConfig)
+     (intf (path opamClientConfig.mli))
+     (impl (path opamClientConfig.ml))))
+   (module
+    (obj_name opamCommands)
+    (visibility public)
+    (source
+     (path OpamCommands)
+     (intf (path opamCommands.mli))
+     (impl (path opamCommands.ml))))
+   (module
+    (obj_name opamConfigCommand)
+    (visibility public)
+    (source
+     (path OpamConfigCommand)
+     (intf (path opamConfigCommand.mli))
+     (impl (path opamConfigCommand.ml))))
+   (module
+    (obj_name opamGitVersion)
+    (visibility public)
+    (source
+     (path OpamGitVersion)
+     (intf (path opamGitVersion.mli))
+     (impl (path opamGitVersion.ml))))
+   (module
+    (obj_name opamInitDefaults)
+    (visibility public)
+    (source
+     (path OpamInitDefaults)
+     (intf (path opamInitDefaults.mli))
+     (impl (path opamInitDefaults.ml))))
+   (module
+    (obj_name opamListCommand)
+    (visibility public)
+    (source
+     (path OpamListCommand)
+     (intf (path opamListCommand.mli))
+     (impl (path opamListCommand.ml))))
+   (module
+    (obj_name opamLockCommand)
+    (visibility public)
+    (source
+     (path OpamLockCommand)
+     (intf (path opamLockCommand.mli))
+     (impl (path opamLockCommand.ml))))
+   (module
+    (obj_name opamPinCommand)
+    (visibility public)
+    (source
+     (path OpamPinCommand)
+     (intf (path opamPinCommand.mli))
+     (impl (path opamPinCommand.ml))))
+   (module
+    (obj_name opamRepositoryCommand)
+    (visibility public)
+    (source
+     (path OpamRepositoryCommand)
+     (intf (path opamRepositoryCommand.mli))
+     (impl (path opamRepositoryCommand.ml))))
+   (module
+    (obj_name opamSolution)
+    (visibility public)
+    (source
+     (path OpamSolution)
+     (intf (path opamSolution.mli))
+     (impl (path opamSolution.ml))))
+   (module
+    (obj_name opamSwitchCommand)
+    (visibility public)
+    (source
+     (path OpamSwitchCommand)
+     (intf (path opamSwitchCommand.mli))
+     (impl (path opamSwitchCommand.ml)))))))

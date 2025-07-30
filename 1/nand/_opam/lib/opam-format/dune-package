@@ -1,0 +1,224 @@
+(lang dune 3.19)
+(name opam-format)
+(version 2.1.6)
+(sections (lib .) (libexec .) (doc ../../doc/opam-format))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamFile.cmi
+   opamFile.cmt
+   opamFile.cmti
+   opamFile.cmx
+   opamFile.ml
+   opamFile.mli
+   opamFilter.cmi
+   opamFilter.cmt
+   opamFilter.cmti
+   opamFilter.cmx
+   opamFilter.ml
+   opamFilter.mli
+   opamFormat.cmi
+   opamFormat.cmt
+   opamFormat.cmti
+   opamFormat.cmx
+   opamFormat.ml
+   opamFormat.mli
+   opamFormatConfig.cmi
+   opamFormatConfig.cmt
+   opamFormatConfig.cmti
+   opamFormatConfig.cmx
+   opamFormatConfig.ml
+   opamFormatConfig.mli
+   opamFormula.cmi
+   opamFormula.cmt
+   opamFormula.cmti
+   opamFormula.cmx
+   opamFormula.ml
+   opamFormula.mli
+   opamInterpLexer.cmi
+   opamInterpLexer.cmt
+   opamInterpLexer.cmti
+   opamInterpLexer.cmx
+   opamInterpLexer.ml
+   opamInterpLexer.mli
+   opamLineLexer.cmi
+   opamLineLexer.cmt
+   opamLineLexer.cmti
+   opamLineLexer.cmx
+   opamLineLexer.ml
+   opamLineLexer.mli
+   opamPackage.cmi
+   opamPackage.cmt
+   opamPackage.cmti
+   opamPackage.cmx
+   opamPackage.ml
+   opamPackage.mli
+   opamPath.cmi
+   opamPath.cmt
+   opamPath.cmti
+   opamPath.cmx
+   opamPath.ml
+   opamPath.mli
+   opamPp.cmi
+   opamPp.cmt
+   opamPp.cmti
+   opamPp.cmx
+   opamPp.ml
+   opamPp.mli
+   opamRepositoryName.cmi
+   opamRepositoryName.cmt
+   opamRepositoryName.cmti
+   opamRepositoryName.cmx
+   opamRepositoryName.ml
+   opamRepositoryName.mli
+   opamSwitch.cmi
+   opamSwitch.cmt
+   opamSwitch.cmti
+   opamSwitch.cmx
+   opamSwitch.ml
+   opamSwitch.mli
+   opamSysPkg.cmi
+   opamSysPkg.cmt
+   opamSysPkg.cmti
+   opamSysPkg.cmx
+   opamSysPkg.ml
+   opamSysPkg.mli
+   opamTypes.cmi
+   opamTypes.cmti
+   opamTypes.mli
+   opamTypesBase.cmi
+   opamTypesBase.cmt
+   opamTypesBase.cmti
+   opamTypesBase.cmx
+   opamTypesBase.ml
+   opamTypesBase.mli
+   opamVariable.cmi
+   opamVariable.cmt
+   opamVariable.cmti
+   opamVariable.cmx
+   opamVariable.ml
+   opamVariable.mli
+   opam_format.a
+   opam_format.cma
+   opam_format.cmxa))
+ (libexec (opam_format.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-format)
+ (kind normal)
+ (synopsis "OCaml Package Manager file format handling library")
+ (archives (byte opam_format.cma) (native opam_format.cmxa))
+ (plugins (byte opam_format.cma) (native opam_format.cmxs))
+ (native_archives opam_format.a)
+ (requires opam-core opam-file-format re)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamFile)
+    (visibility public)
+    (source
+     (path OpamFile)
+     (intf (path opamFile.mli))
+     (impl (path opamFile.ml))))
+   (module
+    (obj_name opamFilter)
+    (visibility public)
+    (source
+     (path OpamFilter)
+     (intf (path opamFilter.mli))
+     (impl (path opamFilter.ml))))
+   (module
+    (obj_name opamFormat)
+    (visibility public)
+    (source
+     (path OpamFormat)
+     (intf (path opamFormat.mli))
+     (impl (path opamFormat.ml))))
+   (module
+    (obj_name opamFormatConfig)
+    (visibility public)
+    (source
+     (path OpamFormatConfig)
+     (intf (path opamFormatConfig.mli))
+     (impl (path opamFormatConfig.ml))))
+   (module
+    (obj_name opamFormula)
+    (visibility public)
+    (source
+     (path OpamFormula)
+     (intf (path opamFormula.mli))
+     (impl (path opamFormula.ml))))
+   (module
+    (obj_name opamInterpLexer)
+    (visibility public)
+    (source
+     (path OpamInterpLexer)
+     (intf (path opamInterpLexer.mli))
+     (impl (path opamInterpLexer.ml))))
+   (module
+    (obj_name opamLineLexer)
+    (visibility public)
+    (source
+     (path OpamLineLexer)
+     (intf (path opamLineLexer.mli))
+     (impl (path opamLineLexer.ml))))
+   (module
+    (obj_name opamPackage)
+    (visibility public)
+    (source
+     (path OpamPackage)
+     (intf (path opamPackage.mli))
+     (impl (path opamPackage.ml))))
+   (module
+    (obj_name opamPath)
+    (visibility public)
+    (source
+     (path OpamPath)
+     (intf (path opamPath.mli))
+     (impl (path opamPath.ml))))
+   (module
+    (obj_name opamPp)
+    (visibility public)
+    (source (path OpamPp) (intf (path opamPp.mli)) (impl (path opamPp.ml))))
+   (module
+    (obj_name opamRepositoryName)
+    (visibility public)
+    (source
+     (path OpamRepositoryName)
+     (intf (path opamRepositoryName.mli))
+     (impl (path opamRepositoryName.ml))))
+   (module
+    (obj_name opamSwitch)
+    (visibility public)
+    (source
+     (path OpamSwitch)
+     (intf (path opamSwitch.mli))
+     (impl (path opamSwitch.ml))))
+   (module
+    (obj_name opamSysPkg)
+    (visibility public)
+    (source
+     (path OpamSysPkg)
+     (intf (path opamSysPkg.mli))
+     (impl (path opamSysPkg.ml))))
+   (module
+    (obj_name opamTypes)
+    (visibility public)
+    (source (path OpamTypes) (intf (path opamTypes.mli))))
+   (module
+    (obj_name opamTypesBase)
+    (visibility public)
+    (source
+     (path OpamTypesBase)
+     (intf (path opamTypesBase.mli))
+     (impl (path opamTypesBase.ml))))
+   (module
+    (obj_name opamVariable)
+    (visibility public)
+    (source
+     (path OpamVariable)
+     (intf (path opamVariable.mli))
+     (impl (path opamVariable.ml)))))))

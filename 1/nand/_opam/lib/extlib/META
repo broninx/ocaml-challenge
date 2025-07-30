@@ -1,0 +1,6 @@
+description = ""
+requires = ""
+archive(byte) = "extlib.cma"
+archive(native) = "extlib.cmxa"
+plugin(byte) = "extlib.cma"
+plugin(native) = "extlib.cmxs"

@@ -1,0 +1,161 @@
+opam-version: "2.0"
+added: [
+  "doc/dose3" {"D"}
+  "doc/dose3/CHANGES" {"F:S11002T1753910161.3"}
+  "doc/dose3/README.architecture" {"F:S901T1753910161.3"}
+  "doc/dose3/README.git" {"F:S987T1753910161.3"}
+  "lib/dose3" {"D"}
+  "lib/dose3/META" {"F:S848T1753910161.24"}
+  "lib/dose3/algo/defaultgraphs.ml" {"F:S29237T1753910161.24"}
+  "lib/dose3/algo/depsolver.ml" {"F:S26187T1753910161.24"}
+  "lib/dose3/algo/depsolver.mli" {"F:S8587T1753910161.24"}
+  "lib/dose3/algo/depsolver_int.ml" {"F:S16189T1753910161.24"}
+  "lib/dose3/algo/depsolver_int.mli" {"F:S7006T1753910161.24"}
+  "lib/dose3/algo/diagnostic.ml" {"F:S29206T1753910161.24"}
+  "lib/dose3/algo/diagnostic.mli" {"F:S6583T1753910161.24"}
+  "lib/dose3/algo/dominators.ml" {"F:S5190T1753910161.24"}
+  "lib/dose3/algo/dose_algo.a" {"F:S931652T1753910161.25"}
+  "lib/dose3/algo/dose_algo.cma" {"F:S948635T1753910161.25"}
+  "lib/dose3/algo/dose_algo.cmi" {"F:S1147T1753910161.25"}
+  "lib/dose3/algo/dose_algo.cmt" {"F:S7422T1753910161.25"}
+  "lib/dose3/algo/dose_algo.cmx" {"F:S367T1753910161.25"}
+  "lib/dose3/algo/dose_algo.cmxa" {"F:S19239T1753910161.25"}
+  "lib/dose3/algo/dose_algo.cmxs" {"F:S784904T1753910161.3"}
+  "lib/dose3/algo/dose_algo.ml" {"F:S892T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Defaultgraphs.cmi" {"F:S103010T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Defaultgraphs.cmt" {"F:S642964T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Defaultgraphs.cmx" {"F:S31535T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Depsolver.cmi" {"F:S10730T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Depsolver.cmt" {"F:S303436T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Depsolver.cmti" {"F:S50979T1753910161.25"}
+  "lib/dose3/algo/dose_algo__Depsolver.cmx" {"F:S7908T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Depsolver_int.cmi" {"F:S8920T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Depsolver_int.cmt" {"F:S164499T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Depsolver_int.cmti" {"F:S41817T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Depsolver_int.cmx" {"F:S7148T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Diagnostic.cmi" {"F:S10933T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Diagnostic.cmt" {"F:S424805T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Diagnostic.cmti" {"F:S46908T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Diagnostic.cmx" {"F:S10471T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Dominators.cmi" {"F:S11336T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Dominators.cmt" {"F:S116538T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Dominators.cmx" {"F:S7075T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Flatten.cmi" {"F:S25752T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Flatten.cmt" {"F:S201862T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Flatten.cmx" {"F:S11508T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Statistics.cmi" {"F:S33752T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Statistics.cmt" {"F:S201197T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Statistics.cmx" {"F:S11469T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongconflicts.cmi" {"F:S12074T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongconflicts.cmt" {"F:S61361T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongconflicts.cmx" {"F:S4373T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongconflicts_int.cmi"
+    {"F:S18472T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongconflicts_int.cmt"
+    {"F:S136597T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongconflicts_int.cmx"
+    {"F:S7315T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongdeps.cmi" {"F:S2621T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongdeps.cmt" {"F:S66676T1753910161.26"}
+  "lib/dose3/algo/dose_algo__Strongdeps.cmti" {"F:S12220T1753910161.27"}
+  "lib/dose3/algo/dose_algo__Strongdeps.cmx" {"F:S4569T1753910161.27"}
+  "lib/dose3/algo/flatten.ml" {"F:S10191T1753910161.27"}
+  "lib/dose3/algo/statistics.ml" {"F:S9300T1753910161.27"}
+  "lib/dose3/algo/strongconflicts.ml" {"F:S2702T1753910161.27"}
+  "lib/dose3/algo/strongconflicts_int.ml" {"F:S7136T1753910161.27"}
+  "lib/dose3/algo/strongdeps.ml" {"F:S7103T1753910161.27"}
+  "lib/dose3/algo/strongdeps.mli" {"F:S1923T1753910161.27"}
+  "lib/dose3/common/cudfAdd.ml" {"F:S12995T1753910161.27"}
+  "lib/dose3/common/cudfAdd.mli" {"F:S8265T1753910161.27"}
+  "lib/dose3/common/cudfDiff.ml" {"F:S5144T1753910161.27"}
+  "lib/dose3/common/cudfDiff.mli" {"F:S1155T1753910161.27"}
+  "lib/dose3/common/cudfSolver.ml" {"F:S8342T1753910161.27"}
+  "lib/dose3/common/cudfSolver.mli" {"F:S338T1753910161.27"}
+  "lib/dose3/common/dose_common.a" {"F:S409042T1753910161.28"}
+  "lib/dose3/common/dose_common.cma" {"F:S377109T1753910161.28"}
+  "lib/dose3/common/dose_common.cmi" {"F:S929T1753910161.28"}
+  "lib/dose3/common/dose_common.cmt" {"F:S6341T1753910161.28"}
+  "lib/dose3/common/dose_common.cmx" {"F:S314T1753910161.28"}
+  "lib/dose3/common/dose_common.cmxa" {"F:S9391T1753910161.28"}
+  "lib/dose3/common/dose_common.cmxs" {"F:S360432T1753910161.3"}
+  "lib/dose3/common/dose_common.ml" {"F:S697T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfAdd.cmi" {"F:S21611T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfAdd.cmt" {"F:S193947T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfAdd.cmti" {"F:S75341T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfAdd.cmx" {"F:S12534T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfDiff.cmi" {"F:S2311T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfDiff.cmt" {"F:S49147T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfDiff.cmti" {"F:S11480T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfDiff.cmx" {"F:S1357T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfSolver.cmi" {"F:S713T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfSolver.cmt" {"F:S93629T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfSolver.cmti" {"F:S5133T1753910161.28"}
+  "lib/dose3/common/dose_common__CudfSolver.cmx" {"F:S4752T1753910161.28"}
+  "lib/dose3/common/dose_common__EdosSolver.cmi" {"F:S5784T1753910161.28"}
+  "lib/dose3/common/dose_common__EdosSolver.cmt" {"F:S305610T1753910161.28"}
+  "lib/dose3/common/dose_common__EdosSolver.cmti" {"F:S28984T1753910161.28"}
+  "lib/dose3/common/dose_common__EdosSolver.cmx" {"F:S7337T1753910161.28"}
+  "lib/dose3/common/dose_common__GitVersionInfo.cmi" {"F:S409T1753910161.28"}
+  "lib/dose3/common/dose_common__GitVersionInfo.cmt"
+    {"F:S3705T1753910161.28"}
+  "lib/dose3/common/dose_common__GitVersionInfo.cmx" {"F:S369T1753910161.28"}
+  "lib/dose3/common/dose_common__Shell_lexer.cmi" {"F:S2067T1753910161.28"}
+  "lib/dose3/common/dose_common__Shell_lexer.cmt" {"F:S52755T1753910161.28"}
+  "lib/dose3/common/dose_common__Shell_lexer.cmx" {"F:S4300T1753910161.28"}
+  "lib/dose3/common/dose_common__Util.cmi" {"F:S19971T1753910161.28"}
+  "lib/dose3/common/dose_common__Util.cmt" {"F:S186657T1753910161.28"}
+  "lib/dose3/common/dose_common__Util.cmti" {"F:S73961T1753910161.28"}
+  "lib/dose3/common/dose_common__Util.cmx" {"F:S8161T1753910161.28"}
+  "lib/dose3/common/dose_common__VersionInfo.cmi" {"F:S336T1753910161.28"}
+  "lib/dose3/common/dose_common__VersionInfo.cmt" {"F:S3300T1753910161.28"}
+  "lib/dose3/common/dose_common__VersionInfo.cmx" {"F:S261T1753910161.28"}
+  "lib/dose3/common/edosSolver.ml" {"F:S22794T1753910161.28"}
+  "lib/dose3/common/edosSolver.mli" {"F:S4050T1753910161.28"}
+  "lib/dose3/common/gitVersionInfo.ml" {"F:S110T1753910161.28"}
+  "lib/dose3/common/shell_lexer.ml" {"F:S14743T1753910161.28"}
+  "lib/dose3/common/util.ml" {"F:S11436T1753910161.28"}
+  "lib/dose3/common/util.mli" {"F:S6371T1753910161.28"}
+  "lib/dose3/common/versionInfo.ml" {"F:S21T1753910161.28"}
+  "lib/dose3/dune-package" {"F:S10343T1753910161.28"}
+  "lib/dose3/opam" {"F:S2386T1753910161.28"}
+  "lib/dose3/versioning/debian.ml" {"F:S9214T1753910161.28"}
+  "lib/dose3/versioning/debian.mli" {"F:S4298T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.a" {"F:S79476T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.cma" {"F:S73438T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.cmi" {"F:S557T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.cmt" {"F:S4342T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.cmx" {"F:S218T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.cmxa" {"F:S3487T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning.cmxs" {"F:S79856T1753910161.3"}
+  "lib/dose3/versioning/dose_versioning.ml" {"F:S361T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Debian.cmi"
+    {"F:S1270T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Debian.cmt"
+    {"F:S89359T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Debian.cmti"
+    {"F:S15282T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Debian.cmx"
+    {"F:S3630T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Semver.cmi" {"F:S521T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Semver.cmt"
+    {"F:S4082T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Semver.cmti"
+    {"F:S4640T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__Semver.cmx" {"F:S804T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__SemverNode.cmi"
+    {"F:S1766T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__SemverNode.cmt"
+    {"F:S77850T1753910161.28"}
+  "lib/dose3/versioning/dose_versioning__SemverNode.cmti"
+    {"F:S13170T1753910161.3"}
+  "lib/dose3/versioning/dose_versioning__SemverNode.cmx"
+    {"F:S3658T1753910161.3"}
+  "lib/dose3/versioning/dose_versioning__Utils.cmi" {"F:S366T1753910161.3"}
+  "lib/dose3/versioning/dose_versioning__Utils.cmt" {"F:S3805T1753910161.3"}
+  "lib/dose3/versioning/dose_versioning__Utils.cmx" {"F:S444T1753910161.3"}
+  "lib/dose3/versioning/semver.ml" {"F:S63T1753910161.3"}
+  "lib/dose3/versioning/semver.mli" {"F:S275T1753910161.3"}
+  "lib/dose3/versioning/semverNode.ml" {"F:S6037T1753910161.3"}
+  "lib/dose3/versioning/semverNode.mli" {"F:S2382T1753910161.3"}
+  "lib/dose3/versioning/utils.ml" {"F:S49T1753910161.3"}
+]

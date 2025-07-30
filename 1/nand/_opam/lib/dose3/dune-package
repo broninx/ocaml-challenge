@@ -1,0 +1,339 @@
+(lang dune 3.19)
+(name dose3)
+(version 7.0.0)
+(sections (lib .) (libexec .) (doc ../../doc/dose3))
+(files
+ (lib
+  (META
+   algo/defaultgraphs.ml
+   algo/depsolver.ml
+   algo/depsolver.mli
+   algo/depsolver_int.ml
+   algo/depsolver_int.mli
+   algo/diagnostic.ml
+   algo/diagnostic.mli
+   algo/dominators.ml
+   algo/dose_algo.a
+   algo/dose_algo.cma
+   algo/dose_algo.cmi
+   algo/dose_algo.cmt
+   algo/dose_algo.cmx
+   algo/dose_algo.cmxa
+   algo/dose_algo.ml
+   algo/dose_algo__Defaultgraphs.cmi
+   algo/dose_algo__Defaultgraphs.cmt
+   algo/dose_algo__Defaultgraphs.cmx
+   algo/dose_algo__Depsolver.cmi
+   algo/dose_algo__Depsolver.cmt
+   algo/dose_algo__Depsolver.cmti
+   algo/dose_algo__Depsolver.cmx
+   algo/dose_algo__Depsolver_int.cmi
+   algo/dose_algo__Depsolver_int.cmt
+   algo/dose_algo__Depsolver_int.cmti
+   algo/dose_algo__Depsolver_int.cmx
+   algo/dose_algo__Diagnostic.cmi
+   algo/dose_algo__Diagnostic.cmt
+   algo/dose_algo__Diagnostic.cmti
+   algo/dose_algo__Diagnostic.cmx
+   algo/dose_algo__Dominators.cmi
+   algo/dose_algo__Dominators.cmt
+   algo/dose_algo__Dominators.cmx
+   algo/dose_algo__Flatten.cmi
+   algo/dose_algo__Flatten.cmt
+   algo/dose_algo__Flatten.cmx
+   algo/dose_algo__Statistics.cmi
+   algo/dose_algo__Statistics.cmt
+   algo/dose_algo__Statistics.cmx
+   algo/dose_algo__Strongconflicts.cmi
+   algo/dose_algo__Strongconflicts.cmt
+   algo/dose_algo__Strongconflicts.cmx
+   algo/dose_algo__Strongconflicts_int.cmi
+   algo/dose_algo__Strongconflicts_int.cmt
+   algo/dose_algo__Strongconflicts_int.cmx
+   algo/dose_algo__Strongdeps.cmi
+   algo/dose_algo__Strongdeps.cmt
+   algo/dose_algo__Strongdeps.cmti
+   algo/dose_algo__Strongdeps.cmx
+   algo/flatten.ml
+   algo/statistics.ml
+   algo/strongconflicts.ml
+   algo/strongconflicts_int.ml
+   algo/strongdeps.ml
+   algo/strongdeps.mli
+   common/cudfAdd.ml
+   common/cudfAdd.mli
+   common/cudfDiff.ml
+   common/cudfDiff.mli
+   common/cudfSolver.ml
+   common/cudfSolver.mli
+   common/dose_common.a
+   common/dose_common.cma
+   common/dose_common.cmi
+   common/dose_common.cmt
+   common/dose_common.cmx
+   common/dose_common.cmxa
+   common/dose_common.ml
+   common/dose_common__CudfAdd.cmi
+   common/dose_common__CudfAdd.cmt
+   common/dose_common__CudfAdd.cmti
+   common/dose_common__CudfAdd.cmx
+   common/dose_common__CudfDiff.cmi
+   common/dose_common__CudfDiff.cmt
+   common/dose_common__CudfDiff.cmti
+   common/dose_common__CudfDiff.cmx
+   common/dose_common__CudfSolver.cmi
+   common/dose_common__CudfSolver.cmt
+   common/dose_common__CudfSolver.cmti
+   common/dose_common__CudfSolver.cmx
+   common/dose_common__EdosSolver.cmi
+   common/dose_common__EdosSolver.cmt
+   common/dose_common__EdosSolver.cmti
+   common/dose_common__EdosSolver.cmx
+   common/dose_common__GitVersionInfo.cmi
+   common/dose_common__GitVersionInfo.cmt
+   common/dose_common__GitVersionInfo.cmx
+   common/dose_common__Shell_lexer.cmi
+   common/dose_common__Shell_lexer.cmt
+   common/dose_common__Shell_lexer.cmx
+   common/dose_common__Util.cmi
+   common/dose_common__Util.cmt
+   common/dose_common__Util.cmti
+   common/dose_common__Util.cmx
+   common/dose_common__VersionInfo.cmi
+   common/dose_common__VersionInfo.cmt
+   common/dose_common__VersionInfo.cmx
+   common/edosSolver.ml
+   common/edosSolver.mli
+   common/gitVersionInfo.ml
+   common/shell_lexer.ml
+   common/util.ml
+   common/util.mli
+   common/versionInfo.ml
+   dune-package
+   opam
+   versioning/debian.ml
+   versioning/debian.mli
+   versioning/dose_versioning.a
+   versioning/dose_versioning.cma
+   versioning/dose_versioning.cmi
+   versioning/dose_versioning.cmt
+   versioning/dose_versioning.cmx
+   versioning/dose_versioning.cmxa
+   versioning/dose_versioning.ml
+   versioning/dose_versioning__Debian.cmi
+   versioning/dose_versioning__Debian.cmt
+   versioning/dose_versioning__Debian.cmti
+   versioning/dose_versioning__Debian.cmx
+   versioning/dose_versioning__Semver.cmi
+   versioning/dose_versioning__Semver.cmt
+   versioning/dose_versioning__Semver.cmti
+   versioning/dose_versioning__Semver.cmx
+   versioning/dose_versioning__SemverNode.cmi
+   versioning/dose_versioning__SemverNode.cmt
+   versioning/dose_versioning__SemverNode.cmti
+   versioning/dose_versioning__SemverNode.cmx
+   versioning/dose_versioning__Utils.cmi
+   versioning/dose_versioning__Utils.cmt
+   versioning/dose_versioning__Utils.cmx
+   versioning/semver.ml
+   versioning/semver.mli
+   versioning/semverNode.ml
+   versioning/semverNode.mli
+   versioning/utils.ml))
+ (libexec
+  (algo/dose_algo.cmxs
+   common/dose_common.cmxs
+   versioning/dose_versioning.cmxs))
+ (doc (CHANGES README.architecture README.git)))
+(library
+ (name dose3.algo)
+ (kind normal)
+ (archives (byte algo/dose_algo.cma) (native algo/dose_algo.cmxa))
+ (plugins (byte algo/dose_algo.cma) (native algo/dose_algo.cmxs))
+ (native_archives algo/dose_algo.a)
+ (requires extlib cudf dose3.common ocamlgraph)
+ (main_module_name Dose_algo)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name dose_algo)
+     (visibility public)
+     (kind alias)
+     (source (path Dose_algo) (impl (path algo/dose_algo.ml-gen))))
+    (name Dose_algo)
+    (modules
+     (module
+      (obj_name dose_algo__Defaultgraphs)
+      (visibility public)
+      (source (path Defaultgraphs) (impl (path algo/defaultgraphs.ml))))
+     (module
+      (obj_name dose_algo__Depsolver)
+      (visibility public)
+      (source
+       (path Depsolver)
+       (intf (path algo/depsolver.mli))
+       (impl (path algo/depsolver.ml))))
+     (module
+      (obj_name dose_algo__Depsolver_int)
+      (visibility public)
+      (source
+       (path Depsolver_int)
+       (intf (path algo/depsolver_int.mli))
+       (impl (path algo/depsolver_int.ml))))
+     (module
+      (obj_name dose_algo__Diagnostic)
+      (visibility public)
+      (source
+       (path Diagnostic)
+       (intf (path algo/diagnostic.mli))
+       (impl (path algo/diagnostic.ml))))
+     (module
+      (obj_name dose_algo__Dominators)
+      (visibility public)
+      (source (path Dominators) (impl (path algo/dominators.ml))))
+     (module
+      (obj_name dose_algo__Flatten)
+      (visibility public)
+      (source (path Flatten) (impl (path algo/flatten.ml))))
+     (module
+      (obj_name dose_algo__Statistics)
+      (visibility public)
+      (source (path Statistics) (impl (path algo/statistics.ml))))
+     (module
+      (obj_name dose_algo__Strongconflicts)
+      (visibility public)
+      (source (path Strongconflicts) (impl (path algo/strongconflicts.ml))))
+     (module
+      (obj_name dose_algo__Strongconflicts_int)
+      (visibility public)
+      (source
+       (path Strongconflicts_int)
+       (impl (path algo/strongconflicts_int.ml))))
+     (module
+      (obj_name dose_algo__Strongdeps)
+      (visibility public)
+      (source
+       (path Strongdeps)
+       (intf (path algo/strongdeps.mli))
+       (impl (path algo/strongdeps.ml))))))
+   (wrapped true))))
+(library
+ (name dose3.common)
+ (kind normal)
+ (archives (byte common/dose_common.cma) (native common/dose_common.cmxa))
+ (plugins (byte common/dose_common.cma) (native common/dose_common.cmxs))
+ (native_archives common/dose_common.a)
+ (requires extlib cudf re.pcre stdlib-shims unix)
+ (main_module_name Dose_common)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name dose_common)
+     (visibility public)
+     (kind alias)
+     (source (path Dose_common) (impl (path common/dose_common.ml-gen))))
+    (name Dose_common)
+    (modules
+     (module
+      (obj_name dose_common__CudfAdd)
+      (visibility public)
+      (source
+       (path CudfAdd)
+       (intf (path common/cudfAdd.mli))
+       (impl (path common/cudfAdd.ml))))
+     (module
+      (obj_name dose_common__CudfDiff)
+      (visibility public)
+      (source
+       (path CudfDiff)
+       (intf (path common/cudfDiff.mli))
+       (impl (path common/cudfDiff.ml))))
+     (module
+      (obj_name dose_common__CudfSolver)
+      (visibility public)
+      (source
+       (path CudfSolver)
+       (intf (path common/cudfSolver.mli))
+       (impl (path common/cudfSolver.ml))))
+     (module
+      (obj_name dose_common__EdosSolver)
+      (visibility public)
+      (source
+       (path EdosSolver)
+       (intf (path common/edosSolver.mli))
+       (impl (path common/edosSolver.ml))))
+     (module
+      (obj_name dose_common__GitVersionInfo)
+      (visibility public)
+      (source (path GitVersionInfo) (impl (path common/gitVersionInfo.ml))))
+     (module
+      (obj_name dose_common__Shell_lexer)
+      (visibility public)
+      (source (path Shell_lexer) (impl (path common/shell_lexer.ml))))
+     (module
+      (obj_name dose_common__Util)
+      (visibility public)
+      (source
+       (path Util)
+       (intf (path common/util.mli))
+       (impl (path common/util.ml))))
+     (module
+      (obj_name dose_common__VersionInfo)
+      (visibility public)
+      (source (path VersionInfo) (impl (path common/versionInfo.ml))))))
+   (wrapped true))))
+(library
+ (name dose3.versioning)
+ (kind normal)
+ (archives
+  (byte versioning/dose_versioning.cma)
+  (native versioning/dose_versioning.cmxa))
+ (plugins
+  (byte versioning/dose_versioning.cma)
+  (native versioning/dose_versioning.cmxs))
+ (native_archives versioning/dose_versioning.a)
+ (requires extlib cudf dose3.common)
+ (main_module_name Dose_versioning)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name dose_versioning)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Dose_versioning)
+      (impl (path versioning/dose_versioning.ml-gen))))
+    (name Dose_versioning)
+    (modules
+     (module
+      (obj_name dose_versioning__Debian)
+      (visibility public)
+      (source
+       (path Debian)
+       (intf (path versioning/debian.mli))
+       (impl (path versioning/debian.ml))))
+     (module
+      (obj_name dose_versioning__Semver)
+      (visibility public)
+      (source
+       (path Semver)
+       (intf (path versioning/semver.mli))
+       (impl (path versioning/semver.ml))))
+     (module
+      (obj_name dose_versioning__SemverNode)
+      (visibility public)
+      (source
+       (path SemverNode)
+       (intf (path versioning/semverNode.mli))
+       (impl (path versioning/semverNode.ml))))
+     (module
+      (obj_name dose_versioning__Utils)
+      (visibility public)
+      (source (path Utils) (impl (path versioning/utils.ml))))))
+   (wrapped true))))

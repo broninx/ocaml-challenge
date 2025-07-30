@@ -1,0 +1,43 @@
+opam-version: "2.0"
+added: [
+  "doc/opam-file-format" {"D"}
+  "doc/opam-file-format/CHANGES" {"F:S1994T1753910168.17"}
+  "doc/opam-file-format/LICENSE" {"F:S26965T1753910168.17"}
+  "doc/opam-file-format/README.md" {"F:S777T1753910168.17"}
+  "lib/opam-file-format" {"D"}
+  "lib/opam-file-format/META" {"F:S251T1753910168.17"}
+  "lib/opam-file-format/dune-package" {"F:S2036T1753910168.17"}
+  "lib/opam-file-format/opam" {"F:S654T1753910168.17"}
+  "lib/opam-file-format/opamBaseParser.cmi" {"F:S1785T1753910168.17"}
+  "lib/opam-file-format/opamBaseParser.cmt" {"F:S551706T1753910168.17"}
+  "lib/opam-file-format/opamBaseParser.cmti" {"F:S8086T1753910168.17"}
+  "lib/opam-file-format/opamBaseParser.cmx" {"F:S8378T1753910168.17"}
+  "lib/opam-file-format/opamBaseParser.ml" {"F:S64049T1753910168.17"}
+  "lib/opam-file-format/opamBaseParser.mli" {"F:S679T1753910168.17"}
+  "lib/opam-file-format/opamLexer.cmi" {"F:S2029T1753910168.17"}
+  "lib/opam-file-format/opamLexer.cmt" {"F:S122838T1753910168.17"}
+  "lib/opam-file-format/opamLexer.cmti" {"F:S11041T1753910168.17"}
+  "lib/opam-file-format/opamLexer.cmx" {"F:S19283T1753910168.17"}
+  "lib/opam-file-format/opamLexer.ml" {"F:S79553T1753910168.17"}
+  "lib/opam-file-format/opamLexer.mli" {"F:S1865T1753910168.17"}
+  "lib/opam-file-format/opamParser.cmi" {"F:S4909T1753910168.17"}
+  "lib/opam-file-format/opamParser.cmt" {"F:S56674T1753910168.17"}
+  "lib/opam-file-format/opamParser.cmti" {"F:S23610T1753910168.17"}
+  "lib/opam-file-format/opamParser.cmx" {"F:S3674T1753910168.17"}
+  "lib/opam-file-format/opamParser.ml" {"F:S4034T1753910168.17"}
+  "lib/opam-file-format/opamParser.mli" {"F:S4150T1753910168.17"}
+  "lib/opam-file-format/opamParserTypes.cmi" {"F:S6604T1753910168.17"}
+  "lib/opam-file-format/opamParserTypes.cmt" {"F:S39914T1753910168.17"}
+  "lib/opam-file-format/opamParserTypes.cmx" {"F:S207T1753910168.17"}
+  "lib/opam-file-format/opamParserTypes.ml" {"F:S5174T1753910168.17"}
+  "lib/opam-file-format/opamPrinter.cmi" {"F:S8857T1753910168.17"}
+  "lib/opam-file-format/opamPrinter.cmt" {"F:S403006T1753910168.17"}
+  "lib/opam-file-format/opamPrinter.cmti" {"F:S43373T1753910168.17"}
+  "lib/opam-file-format/opamPrinter.cmx" {"F:S5857T1753910168.17"}
+  "lib/opam-file-format/opamPrinter.ml" {"F:S25989T1753910168.17"}
+  "lib/opam-file-format/opamPrinter.mli" {"F:S7754T1753910168.17"}
+  "lib/opam-file-format/opam_file_format.a" {"F:S351512T1753910168.17"}
+  "lib/opam-file-format/opam_file_format.cma" {"F:S427167T1753910168.17"}
+  "lib/opam-file-format/opam_file_format.cmxa" {"F:S3522T1753910168.17"}
+  "lib/opam-file-format/opam_file_format.cmxs" {"F:S315456T1753910168.17"}
+]

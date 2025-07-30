@@ -1,0 +1,224 @@
+(lang dune 3.19)
+(name opam-state)
+(version 2.1.6)
+(sections (lib .) (libexec .) (doc ../../doc/opam-state))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamEnv.cmi
+   opamEnv.cmt
+   opamEnv.cmti
+   opamEnv.cmx
+   opamEnv.ml
+   opamEnv.mli
+   opamFileTools.cmi
+   opamFileTools.cmt
+   opamFileTools.cmti
+   opamFileTools.cmx
+   opamFileTools.ml
+   opamFileTools.mli
+   opamFormatUpgrade.cmi
+   opamFormatUpgrade.cmt
+   opamFormatUpgrade.cmti
+   opamFormatUpgrade.cmx
+   opamFormatUpgrade.ml
+   opamFormatUpgrade.mli
+   opamGlobalState.cmi
+   opamGlobalState.cmt
+   opamGlobalState.cmti
+   opamGlobalState.cmx
+   opamGlobalState.ml
+   opamGlobalState.mli
+   opamPackageVar.cmi
+   opamPackageVar.cmt
+   opamPackageVar.cmti
+   opamPackageVar.cmx
+   opamPackageVar.ml
+   opamPackageVar.mli
+   opamPinned.cmi
+   opamPinned.cmt
+   opamPinned.cmti
+   opamPinned.cmx
+   opamPinned.ml
+   opamPinned.mli
+   opamRepositoryState.cmi
+   opamRepositoryState.cmt
+   opamRepositoryState.cmti
+   opamRepositoryState.cmx
+   opamRepositoryState.ml
+   opamRepositoryState.mli
+   opamScript.cmi
+   opamScript.cmt
+   opamScript.cmti
+   opamScript.cmx
+   opamScript.ml
+   opamScript.mli
+   opamSpdxList.cmi
+   opamSpdxList.cmt
+   opamSpdxList.cmti
+   opamSpdxList.cmx
+   opamSpdxList.ml
+   opamSpdxList.mli
+   opamStateConfig.cmi
+   opamStateConfig.cmt
+   opamStateConfig.cmti
+   opamStateConfig.cmx
+   opamStateConfig.ml
+   opamStateConfig.mli
+   opamStateTypes.cmi
+   opamStateTypes.cmti
+   opamStateTypes.mli
+   opamSwitchAction.cmi
+   opamSwitchAction.cmt
+   opamSwitchAction.cmti
+   opamSwitchAction.cmx
+   opamSwitchAction.ml
+   opamSwitchAction.mli
+   opamSwitchState.cmi
+   opamSwitchState.cmt
+   opamSwitchState.cmti
+   opamSwitchState.cmx
+   opamSwitchState.ml
+   opamSwitchState.mli
+   opamSysInteract.cmi
+   opamSysInteract.cmt
+   opamSysInteract.cmti
+   opamSysInteract.cmx
+   opamSysInteract.ml
+   opamSysInteract.mli
+   opamSysPoll.cmi
+   opamSysPoll.cmt
+   opamSysPoll.cmti
+   opamSysPoll.cmx
+   opamSysPoll.ml
+   opamSysPoll.mli
+   opamUpdate.cmi
+   opamUpdate.cmt
+   opamUpdate.cmti
+   opamUpdate.cmx
+   opamUpdate.ml
+   opamUpdate.mli
+   opam_state.a
+   opam_state.cma
+   opam_state.cmxa))
+ (libexec (opam_state.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-state)
+ (kind normal)
+ (synopsis "OCaml Package Manager instance management library")
+ (archives (byte opam_state.cma) (native opam_state.cmxa))
+ (plugins (byte opam_state.cma) (native opam_state.cmxs))
+ (native_archives opam_state.a)
+ (requires opam-repository)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamEnv)
+    (visibility public)
+    (source (path OpamEnv) (intf (path opamEnv.mli)) (impl (path opamEnv.ml))))
+   (module
+    (obj_name opamFileTools)
+    (visibility public)
+    (source
+     (path OpamFileTools)
+     (intf (path opamFileTools.mli))
+     (impl (path opamFileTools.ml))))
+   (module
+    (obj_name opamFormatUpgrade)
+    (visibility public)
+    (source
+     (path OpamFormatUpgrade)
+     (intf (path opamFormatUpgrade.mli))
+     (impl (path opamFormatUpgrade.ml))))
+   (module
+    (obj_name opamGlobalState)
+    (visibility public)
+    (source
+     (path OpamGlobalState)
+     (intf (path opamGlobalState.mli))
+     (impl (path opamGlobalState.ml))))
+   (module
+    (obj_name opamPackageVar)
+    (visibility public)
+    (source
+     (path OpamPackageVar)
+     (intf (path opamPackageVar.mli))
+     (impl (path opamPackageVar.ml))))
+   (module
+    (obj_name opamPinned)
+    (visibility public)
+    (source
+     (path OpamPinned)
+     (intf (path opamPinned.mli))
+     (impl (path opamPinned.ml))))
+   (module
+    (obj_name opamRepositoryState)
+    (visibility public)
+    (source
+     (path OpamRepositoryState)
+     (intf (path opamRepositoryState.mli))
+     (impl (path opamRepositoryState.ml))))
+   (module
+    (obj_name opamScript)
+    (visibility public)
+    (source
+     (path OpamScript)
+     (intf (path opamScript.mli))
+     (impl (path opamScript.ml))))
+   (module
+    (obj_name opamSpdxList)
+    (visibility public)
+    (source
+     (path OpamSpdxList)
+     (intf (path opamSpdxList.mli))
+     (impl (path opamSpdxList.ml))))
+   (module
+    (obj_name opamStateConfig)
+    (visibility public)
+    (source
+     (path OpamStateConfig)
+     (intf (path opamStateConfig.mli))
+     (impl (path opamStateConfig.ml))))
+   (module
+    (obj_name opamStateTypes)
+    (visibility public)
+    (source (path OpamStateTypes) (intf (path opamStateTypes.mli))))
+   (module
+    (obj_name opamSwitchAction)
+    (visibility public)
+    (source
+     (path OpamSwitchAction)
+     (intf (path opamSwitchAction.mli))
+     (impl (path opamSwitchAction.ml))))
+   (module
+    (obj_name opamSwitchState)
+    (visibility public)
+    (source
+     (path OpamSwitchState)
+     (intf (path opamSwitchState.mli))
+     (impl (path opamSwitchState.ml))))
+   (module
+    (obj_name opamSysInteract)
+    (visibility public)
+    (source
+     (path OpamSysInteract)
+     (intf (path opamSysInteract.mli))
+     (impl (path opamSysInteract.ml))))
+   (module
+    (obj_name opamSysPoll)
+    (visibility public)
+    (source
+     (path OpamSysPoll)
+     (intf (path opamSysPoll.mli))
+     (impl (path opamSysPoll.ml))))
+   (module
+    (obj_name opamUpdate)
+    (visibility public)
+    (source
+     (path OpamUpdate)
+     (intf (path opamUpdate.mli))
+     (impl (path opamUpdate.ml)))))))

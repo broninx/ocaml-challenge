@@ -1,0 +1,255 @@
+(lang dune 3.19)
+(name opam-core)
+(version 2.1.6)
+(sections (lib .) (libexec .) (doc ../../doc/opam-core))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamACL.cmi
+   opamACL.cmt
+   opamACL.cmti
+   opamACL.cmx
+   opamACL.ml
+   opamACL.mli
+   opamCached.cmi
+   opamCached.cmt
+   opamCached.cmti
+   opamCached.cmx
+   opamCached.ml
+   opamCached.mli
+   opamCompat.cmi
+   opamCompat.cmt
+   opamCompat.cmti
+   opamCompat.cmx
+   opamCompat.ml
+   opamCompat.mli
+   opamConsole.cmi
+   opamConsole.cmt
+   opamConsole.cmti
+   opamConsole.cmx
+   opamConsole.ml
+   opamConsole.mli
+   opamCoreConfig.cmi
+   opamCoreConfig.cmt
+   opamCoreConfig.cmti
+   opamCoreConfig.cmx
+   opamCoreConfig.ml
+   opamCoreConfig.mli
+   opamDirTrack.cmi
+   opamDirTrack.cmt
+   opamDirTrack.cmti
+   opamDirTrack.cmx
+   opamDirTrack.ml
+   opamDirTrack.mli
+   opamFilename.cmi
+   opamFilename.cmt
+   opamFilename.cmti
+   opamFilename.cmx
+   opamFilename.ml
+   opamFilename.mli
+   opamHash.cmi
+   opamHash.cmt
+   opamHash.cmti
+   opamHash.cmx
+   opamHash.ml
+   opamHash.mli
+   opamJson.cmi
+   opamJson.cmt
+   opamJson.cmti
+   opamJson.cmx
+   opamJson.ml
+   opamJson.mli
+   opamParallel.cmi
+   opamParallel.cmt
+   opamParallel.cmti
+   opamParallel.cmx
+   opamParallel.ml
+   opamParallel.mli
+   opamProcess.cmi
+   opamProcess.cmt
+   opamProcess.cmti
+   opamProcess.cmx
+   opamProcess.ml
+   opamProcess.mli
+   opamSHA.cmi
+   opamSHA.cmt
+   opamSHA.cmti
+   opamSHA.cmx
+   opamSHA.ml
+   opamSHA.mli
+   opamStd.cmi
+   opamStd.cmt
+   opamStd.cmti
+   opamStd.cmx
+   opamStd.ml
+   opamStd.mli
+   opamStubs.cmi
+   opamStubs.cmt
+   opamStubs.cmti
+   opamStubs.cmx
+   opamStubs.ml
+   opamStubs.mli
+   opamStubsTypes.cmi
+   opamStubsTypes.cmt
+   opamStubsTypes.cmx
+   opamStubsTypes.ml
+   opamSystem.cmi
+   opamSystem.cmt
+   opamSystem.cmti
+   opamSystem.cmx
+   opamSystem.ml
+   opamSystem.mli
+   opamUrl.cmi
+   opamUrl.cmt
+   opamUrl.cmti
+   opamUrl.cmx
+   opamUrl.ml
+   opamUrl.mli
+   opamVersion.cmi
+   opamVersion.cmt
+   opamVersion.cmti
+   opamVersion.cmx
+   opamVersion.ml
+   opamVersion.mli
+   opamVersionCompare.cmi
+   opamVersionCompare.cmt
+   opamVersionCompare.cmti
+   opamVersionCompare.cmx
+   opamVersionCompare.ml
+   opamVersionCompare.mli
+   opam_core.a
+   opam_core.cma
+   opam_core.cmxa))
+ (libexec (opam_core.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-core)
+ (kind normal)
+ (synopsis "OCaml Package Manager core internal stdlib")
+ (archives (byte opam_core.cma) (native opam_core.cmxa))
+ (plugins (byte opam_core.cma) (native opam_core.cmxs))
+ (native_archives opam_core.a)
+ (requires re ocamlgraph unix)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamACL)
+    (visibility public)
+    (source (path OpamACL) (intf (path opamACL.mli)) (impl (path opamACL.ml))))
+   (module
+    (obj_name opamCached)
+    (visibility public)
+    (source
+     (path OpamCached)
+     (intf (path opamCached.mli))
+     (impl (path opamCached.ml))))
+   (module
+    (obj_name opamCompat)
+    (visibility public)
+    (source
+     (path OpamCompat)
+     (intf (path opamCompat.mli))
+     (impl (path opamCompat.ml))))
+   (module
+    (obj_name opamConsole)
+    (visibility public)
+    (source
+     (path OpamConsole)
+     (intf (path opamConsole.mli))
+     (impl (path opamConsole.ml))))
+   (module
+    (obj_name opamCoreConfig)
+    (visibility public)
+    (source
+     (path OpamCoreConfig)
+     (intf (path opamCoreConfig.mli))
+     (impl (path opamCoreConfig.ml))))
+   (module
+    (obj_name opamDirTrack)
+    (visibility public)
+    (source
+     (path OpamDirTrack)
+     (intf (path opamDirTrack.mli))
+     (impl (path opamDirTrack.ml))))
+   (module
+    (obj_name opamFilename)
+    (visibility public)
+    (source
+     (path OpamFilename)
+     (intf (path opamFilename.mli))
+     (impl (path opamFilename.ml))))
+   (module
+    (obj_name opamHash)
+    (visibility public)
+    (source
+     (path OpamHash)
+     (intf (path opamHash.mli))
+     (impl (path opamHash.ml))))
+   (module
+    (obj_name opamJson)
+    (visibility public)
+    (source
+     (path OpamJson)
+     (intf (path opamJson.mli))
+     (impl (path opamJson.ml))))
+   (module
+    (obj_name opamParallel)
+    (visibility public)
+    (source
+     (path OpamParallel)
+     (intf (path opamParallel.mli))
+     (impl (path opamParallel.ml))))
+   (module
+    (obj_name opamProcess)
+    (visibility public)
+    (source
+     (path OpamProcess)
+     (intf (path opamProcess.mli))
+     (impl (path opamProcess.ml))))
+   (module
+    (obj_name opamSHA)
+    (visibility public)
+    (source (path OpamSHA) (intf (path opamSHA.mli)) (impl (path opamSHA.ml))))
+   (module
+    (obj_name opamStd)
+    (visibility public)
+    (source (path OpamStd) (intf (path opamStd.mli)) (impl (path opamStd.ml))))
+   (module
+    (obj_name opamStubs)
+    (visibility public)
+    (source
+     (path OpamStubs)
+     (intf (path opamStubs.mli))
+     (impl (path opamStubs.ml))))
+   (module
+    (obj_name opamStubsTypes)
+    (visibility public)
+    (source (path OpamStubsTypes) (impl (path opamStubsTypes.ml))))
+   (module
+    (obj_name opamSystem)
+    (visibility public)
+    (source
+     (path OpamSystem)
+     (intf (path opamSystem.mli))
+     (impl (path opamSystem.ml))))
+   (module
+    (obj_name opamUrl)
+    (visibility public)
+    (source (path OpamUrl) (intf (path opamUrl.mli)) (impl (path opamUrl.ml))))
+   (module
+    (obj_name opamVersion)
+    (visibility public)
+    (source
+     (path OpamVersion)
+     (intf (path opamVersion.mli))
+     (impl (path opamVersion.ml))))
+   (module
+    (obj_name opamVersionCompare)
+    (visibility public)
+    (source
+     (path OpamVersionCompare)
+     (intf (path opamVersionCompare.mli))
+     (impl (path opamVersionCompare.ml)))))))

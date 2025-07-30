@@ -1,0 +1,216 @@
+(lang dune 3.19)
+(name extlib)
+(sections (lib .) (libexec .) (doc ../../doc/extlib))
+(files
+ (lib
+  (IO.ml
+   IO.mli
+   META
+   bitSet.cmi
+   bitSet.cmt
+   bitSet.cmti
+   bitSet.cmx
+   bitSet.ml
+   bitSet.mli
+   dllist.cmi
+   dllist.cmt
+   dllist.cmti
+   dllist.cmx
+   dllist.ml
+   dllist.mli
+   dune-package
+   dynArray.cmi
+   dynArray.cmt
+   dynArray.cmti
+   dynArray.cmx
+   dynArray.ml
+   dynArray.mli
+   enum.cmi
+   enum.cmt
+   enum.cmti
+   enum.cmx
+   enum.ml
+   enum.mli
+   extArray.cmi
+   extArray.cmt
+   extArray.cmti
+   extArray.cmx
+   extArray.ml
+   extArray.mli
+   extBuffer.cmi
+   extBuffer.cmt
+   extBuffer.cmti
+   extBuffer.cmx
+   extBuffer.ml
+   extBuffer.mli
+   extBytes.cmi
+   extBytes.cmt
+   extBytes.cmx
+   extBytes.ml
+   extHashtbl.cmi
+   extHashtbl.cmt
+   extHashtbl.cmti
+   extHashtbl.cmx
+   extHashtbl.ml
+   extHashtbl.mli
+   extLib.cmi
+   extLib.cmt
+   extLib.cmx
+   extLib.ml
+   extList.cmi
+   extList.cmt
+   extList.cmti
+   extList.cmx
+   extList.ml
+   extList.mli
+   extString.cmi
+   extString.cmt
+   extString.cmti
+   extString.cmx
+   extString.ml
+   extString.mli
+   extlib.a
+   extlib.cma
+   extlib.cmxa
+   global.cmi
+   global.cmt
+   global.cmti
+   global.cmx
+   global.ml
+   global.mli
+   iO.cmi
+   iO.cmt
+   iO.cmti
+   iO.cmx
+   opam
+   optParse.cmi
+   optParse.cmt
+   optParse.cmti
+   optParse.cmx
+   optParse.ml
+   optParse.mli
+   option.cmi
+   option.cmt
+   option.cmti
+   option.cmx
+   option.ml
+   option.mli
+   pMap.cmi
+   pMap.cmt
+   pMap.cmti
+   pMap.cmx
+   pMap.ml
+   pMap.mli
+   refList.cmi
+   refList.cmt
+   refList.cmti
+   refList.cmx
+   refList.ml
+   refList.mli
+   std.cmi
+   std.cmt
+   std.cmti
+   std.cmx
+   std.ml
+   std.mli))
+ (libexec (extlib.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name extlib)
+ (kind normal)
+ (archives (byte extlib.cma) (native extlib.cmxa))
+ (plugins (byte extlib.cma) (native extlib.cmxs))
+ (native_archives extlib.a)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name bitSet)
+    (visibility public)
+    (source (path BitSet) (intf (path bitSet.mli)) (impl (path bitSet.ml))))
+   (module
+    (obj_name dllist)
+    (visibility public)
+    (source (path Dllist) (intf (path dllist.mli)) (impl (path dllist.ml))))
+   (module
+    (obj_name dynArray)
+    (visibility public)
+    (source
+     (path DynArray)
+     (intf (path dynArray.mli))
+     (impl (path dynArray.ml))))
+   (module
+    (obj_name enum)
+    (visibility public)
+    (source (path Enum) (intf (path enum.mli)) (impl (path enum.ml))))
+   (module
+    (obj_name extArray)
+    (visibility public)
+    (source
+     (path ExtArray)
+     (intf (path extArray.mli))
+     (impl (path extArray.ml))))
+   (module
+    (obj_name extBuffer)
+    (visibility public)
+    (source
+     (path ExtBuffer)
+     (intf (path extBuffer.mli))
+     (impl (path extBuffer.ml))))
+   (module
+    (obj_name extBytes)
+    (visibility public)
+    (source (path ExtBytes) (impl (path extBytes.ml))))
+   (module
+    (obj_name extHashtbl)
+    (visibility public)
+    (source
+     (path ExtHashtbl)
+     (intf (path extHashtbl.mli))
+     (impl (path extHashtbl.ml))))
+   (module
+    (obj_name extLib)
+    (visibility public)
+    (source (path ExtLib) (impl (path extLib.ml))))
+   (module
+    (obj_name extList)
+    (visibility public)
+    (source (path ExtList) (intf (path extList.mli)) (impl (path extList.ml))))
+   (module
+    (obj_name extString)
+    (visibility public)
+    (source
+     (path ExtString)
+     (intf (path extString.mli))
+     (impl (path extString.ml))))
+   (module
+    (obj_name global)
+    (visibility public)
+    (source (path Global) (intf (path global.mli)) (impl (path global.ml))))
+   (module
+    (obj_name iO)
+    (visibility public)
+    (source (path IO) (intf (path IO.mli)) (impl (path IO.ml))))
+   (module
+    (obj_name optParse)
+    (visibility public)
+    (source
+     (path OptParse)
+     (intf (path optParse.mli))
+     (impl (path optParse.ml))))
+   (module
+    (obj_name option)
+    (visibility public)
+    (source (path Option) (intf (path option.mli)) (impl (path option.ml))))
+   (module
+    (obj_name pMap)
+    (visibility public)
+    (source (path PMap) (intf (path pMap.mli)) (impl (path pMap.ml))))
+   (module
+    (obj_name refList)
+    (visibility public)
+    (source (path RefList) (intf (path refList.mli)) (impl (path refList.ml))))
+   (module
+    (obj_name std)
+    (visibility public)
+    (source (path Std) (intf (path std.mli)) (impl (path std.ml)))))))

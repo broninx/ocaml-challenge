@@ -1,0 +1,32 @@
+opam-version: "2.0"
+added: [
+  "doc/mccs" {"D"}
+  "doc/mccs/CHANGES.md" {"F:S549T1753910163.38"}
+  "doc/mccs/README.md" {"F:S2044T1753910163.38"}
+  "lib/mccs" {"D"}
+  "lib/mccs/META" {"F:S488T1753910163.35"}
+  "lib/mccs/dune-package" {"F:S4029T1753910163.35"}
+  "lib/mccs/glpk/internal/libmccs_glpk_stubs.a" {"F:S2876002T1753910163.36"}
+  "lib/mccs/glpk/internal/mccs_glpk.a" {"F:S2166T1753910163.36"}
+  "lib/mccs/glpk/internal/mccs_glpk.cma" {"F:S2058T1753910163.36"}
+  "lib/mccs/glpk/internal/mccs_glpk.cmxa" {"F:S204T1753910163.36"}
+  "lib/mccs/glpk/internal/mccs_glpk.cmxs" {"F:S16312T1753910163.37"}
+  "lib/mccs/glpk/internal/ocaml_mccs_glpk.cmi" {"F:S203T1753910163.36"}
+  "lib/mccs/glpk/internal/ocaml_mccs_glpk.cmt" {"F:S2433T1753910163.36"}
+  "lib/mccs/glpk/internal/ocaml_mccs_glpk.cmx" {"F:S179T1753910163.36"}
+  "lib/mccs/glpk/internal/ocaml_mccs_glpk.ml" {"F:S55T1753910163.36"}
+  "lib/mccs/libmccs_stubs.a" {"F:S7357702T1753910163.37"}
+  "lib/mccs/mccs.a" {"F:S12166T1753910163.37"}
+  "lib/mccs/mccs.cma" {"F:S13244T1753910163.37"}
+  "lib/mccs/mccs.cmi" {"F:S1428T1753910163.37"}
+  "lib/mccs/mccs.cmt" {"F:S28868T1753910163.37"}
+  "lib/mccs/mccs.cmti" {"F:S8614T1753910163.37"}
+  "lib/mccs/mccs.cmx" {"F:S1242T1753910163.37"}
+  "lib/mccs/mccs.cmxa" {"F:S689T1753910163.37"}
+  "lib/mccs/mccs.cmxs" {"F:S2645624T1753910163.37"}
+  "lib/mccs/mccs.ml" {"F:S3218T1753910163.37"}
+  "lib/mccs/mccs.mli" {"F:S1325T1753910163.37"}
+  "lib/mccs/opam" {"F:S889T1753910163.37"}
+  "lib/stublibs/dllmccs_glpk_stubs.so" {"F:S1530360T1753910163.37"}
+  "lib/stublibs/dllmccs_stubs.so" {"F:S2635240T1753910163.38"}
+]

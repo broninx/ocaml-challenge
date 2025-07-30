@@ -1,0 +1,159 @@
+(lang dune 3.19)
+(name opam-repository)
+(version 2.1.6)
+(sections (lib .) (libexec .) (doc ../../doc/opam-repository))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamDarcs.cmi
+   opamDarcs.cmt
+   opamDarcs.cmti
+   opamDarcs.cmx
+   opamDarcs.ml
+   opamDarcs.mli
+   opamDownload.cmi
+   opamDownload.cmt
+   opamDownload.cmti
+   opamDownload.cmx
+   opamDownload.ml
+   opamDownload.mli
+   opamGit.cmi
+   opamGit.cmt
+   opamGit.cmti
+   opamGit.cmx
+   opamGit.ml
+   opamGit.mli
+   opamHTTP.cmi
+   opamHTTP.cmt
+   opamHTTP.cmti
+   opamHTTP.cmx
+   opamHTTP.ml
+   opamHTTP.mli
+   opamHg.cmi
+   opamHg.cmt
+   opamHg.cmti
+   opamHg.cmx
+   opamHg.ml
+   opamHg.mli
+   opamLocal.cmi
+   opamLocal.cmt
+   opamLocal.cmti
+   opamLocal.cmx
+   opamLocal.ml
+   opamLocal.mli
+   opamRepository.cmi
+   opamRepository.cmt
+   opamRepository.cmti
+   opamRepository.cmx
+   opamRepository.ml
+   opamRepository.mli
+   opamRepositoryBackend.cmi
+   opamRepositoryBackend.cmt
+   opamRepositoryBackend.cmti
+   opamRepositoryBackend.cmx
+   opamRepositoryBackend.ml
+   opamRepositoryBackend.mli
+   opamRepositoryConfig.cmi
+   opamRepositoryConfig.cmt
+   opamRepositoryConfig.cmti
+   opamRepositoryConfig.cmx
+   opamRepositoryConfig.ml
+   opamRepositoryConfig.mli
+   opamRepositoryPath.cmi
+   opamRepositoryPath.cmt
+   opamRepositoryPath.cmti
+   opamRepositoryPath.cmx
+   opamRepositoryPath.ml
+   opamRepositoryPath.mli
+   opamVCS.cmi
+   opamVCS.cmt
+   opamVCS.cmti
+   opamVCS.cmx
+   opamVCS.ml
+   opamVCS.mli
+   opam_repository.a
+   opam_repository.cma
+   opam_repository.cmxa))
+ (libexec (opam_repository.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-repository)
+ (kind normal)
+ (synopsis "OCaml Package Manager remote repository handling library")
+ (archives (byte opam_repository.cma) (native opam_repository.cmxa))
+ (plugins (byte opam_repository.cma) (native opam_repository.cmxs))
+ (native_archives opam_repository.a)
+ (requires opam-format)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamDarcs)
+    (visibility public)
+    (source
+     (path OpamDarcs)
+     (intf (path opamDarcs.mli))
+     (impl (path opamDarcs.ml))))
+   (module
+    (obj_name opamDownload)
+    (visibility public)
+    (source
+     (path OpamDownload)
+     (intf (path opamDownload.mli))
+     (impl (path opamDownload.ml))))
+   (module
+    (obj_name opamGit)
+    (visibility public)
+    (source (path OpamGit) (intf (path opamGit.mli)) (impl (path opamGit.ml))))
+   (module
+    (obj_name opamHTTP)
+    (visibility public)
+    (source
+     (path OpamHTTP)
+     (intf (path opamHTTP.mli))
+     (impl (path opamHTTP.ml))))
+   (module
+    (obj_name opamHg)
+    (visibility public)
+    (source (path OpamHg) (intf (path opamHg.mli)) (impl (path opamHg.ml))))
+   (module
+    (obj_name opamLocal)
+    (visibility public)
+    (source
+     (path OpamLocal)
+     (intf (path opamLocal.mli))
+     (impl (path opamLocal.ml))))
+   (module
+    (obj_name opamRepository)
+    (visibility public)
+    (source
+     (path OpamRepository)
+     (intf (path opamRepository.mli))
+     (impl (path opamRepository.ml))))
+   (module
+    (obj_name opamRepositoryBackend)
+    (visibility public)
+    (source
+     (path OpamRepositoryBackend)
+     (intf (path opamRepositoryBackend.mli))
+     (impl (path opamRepositoryBackend.ml))))
+   (module
+    (obj_name opamRepositoryConfig)
+    (visibility public)
+    (source
+     (path OpamRepositoryConfig)
+     (intf (path opamRepositoryConfig.mli))
+     (impl (path opamRepositoryConfig.ml))))
+   (module
+    (obj_name opamRepositoryPath)
+    (visibility public)
+    (source
+     (path OpamRepositoryPath)
+     (intf (path opamRepositoryPath.mli))
+     (impl (path opamRepositoryPath.ml))))
+   (module
+    (obj_name opamVCS)
+    (visibility public)
+    (source (path OpamVCS) (intf (path opamVCS.mli)) (impl (path opamVCS.ml)))))))

@@ -1,0 +1,150 @@
+(lang dune 3.19)
+(name opam-solver)
+(version 2.1.6)
+(sections (lib .) (libexec .) (doc ../../doc/opam-solver))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   opamActionGraph.cmi
+   opamActionGraph.cmt
+   opamActionGraph.cmti
+   opamActionGraph.cmx
+   opamActionGraph.ml
+   opamActionGraph.mli
+   opamBuiltin0install.cmi
+   opamBuiltin0install.cmt
+   opamBuiltin0install.cmti
+   opamBuiltin0install.cmx
+   opamBuiltin0install.ml
+   opamBuiltin0install.mli
+   opamBuiltinMccs.cmi
+   opamBuiltinMccs.cmt
+   opamBuiltinMccs.cmti
+   opamBuiltinMccs.cmx
+   opamBuiltinMccs.ml
+   opamBuiltinMccs.mli
+   opamBuiltinZ3.cmi
+   opamBuiltinZ3.cmt
+   opamBuiltinZ3.cmti
+   opamBuiltinZ3.cmx
+   opamBuiltinZ3.ml
+   opamBuiltinZ3.mli
+   opamCudf.cmi
+   opamCudf.cmt
+   opamCudf.cmti
+   opamCudf.cmx
+   opamCudf.ml
+   opamCudf.mli
+   opamCudfSolver.cmi
+   opamCudfSolver.cmt
+   opamCudfSolver.cmti
+   opamCudfSolver.cmx
+   opamCudfSolver.ml
+   opamCudfSolver.mli
+   opamCudfSolverSig.cmi
+   opamCudfSolverSig.cmt
+   opamCudfSolverSig.cmx
+   opamCudfSolverSig.ml
+   opamDoseCompat.cmi
+   opamDoseCompat.cmt
+   opamDoseCompat.cmti
+   opamDoseCompat.cmx
+   opamDoseCompat.ml
+   opamDoseCompat.mli
+   opamSolver.cmi
+   opamSolver.cmt
+   opamSolver.cmti
+   opamSolver.cmx
+   opamSolver.ml
+   opamSolver.mli
+   opamSolverConfig.cmi
+   opamSolverConfig.cmt
+   opamSolverConfig.cmti
+   opamSolverConfig.cmx
+   opamSolverConfig.ml
+   opamSolverConfig.mli
+   opam_solver.a
+   opam_solver.cma
+   opam_solver.cmxa))
+ (libexec (opam_solver.cmxs))
+ (doc (CHANGES LICENSE README.md)))
+(library
+ (name opam-solver)
+ (kind normal)
+ (synopsis "OCaml Package Manager solver interaction library")
+ (archives (byte opam_solver.cma) (native opam_solver.cmxa))
+ (plugins (byte opam_solver.cma) (native opam_solver.cmxs))
+ (native_archives opam_solver.a)
+ (requires opam-format cudf dose3.algo mccs)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name opamActionGraph)
+    (visibility public)
+    (source
+     (path OpamActionGraph)
+     (intf (path opamActionGraph.mli))
+     (impl (path opamActionGraph.ml))))
+   (module
+    (obj_name opamBuiltin0install)
+    (visibility public)
+    (source
+     (path OpamBuiltin0install)
+     (intf (path opamBuiltin0install.mli))
+     (impl (path opamBuiltin0install.ml))))
+   (module
+    (obj_name opamBuiltinMccs)
+    (visibility public)
+    (source
+     (path OpamBuiltinMccs)
+     (intf (path opamBuiltinMccs.mli))
+     (impl (path opamBuiltinMccs.ml))))
+   (module
+    (obj_name opamBuiltinZ3)
+    (visibility public)
+    (source
+     (path OpamBuiltinZ3)
+     (intf (path opamBuiltinZ3.mli))
+     (impl (path opamBuiltinZ3.ml))))
+   (module
+    (obj_name opamCudf)
+    (visibility public)
+    (source
+     (path OpamCudf)
+     (intf (path opamCudf.mli))
+     (impl (path opamCudf.ml))))
+   (module
+    (obj_name opamCudfSolver)
+    (visibility public)
+    (source
+     (path OpamCudfSolver)
+     (intf (path opamCudfSolver.mli))
+     (impl (path opamCudfSolver.ml))))
+   (module
+    (obj_name opamCudfSolverSig)
+    (visibility public)
+    (source (path OpamCudfSolverSig) (impl (path opamCudfSolverSig.ml))))
+   (module
+    (obj_name opamDoseCompat)
+    (visibility public)
+    (source
+     (path OpamDoseCompat)
+     (intf (path opamDoseCompat.mli))
+     (impl (path opamDoseCompat.ml))))
+   (module
+    (obj_name opamSolver)
+    (visibility public)
+    (source
+     (path OpamSolver)
+     (intf (path opamSolver.mli))
+     (impl (path opamSolver.ml))))
+   (module
+    (obj_name opamSolverConfig)
+    (visibility public)
+    (source
+     (path OpamSolverConfig)
+     (intf (path opamSolverConfig.mli))
+     (impl (path opamSolverConfig.ml)))))))

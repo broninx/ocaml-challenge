@@ -1,0 +1,7 @@
+version = "2.2.0"
+description = "Parser and printer for the opam file syntax"
+requires = ""
+archive(byte) = "opam_file_format.cma"
+archive(native) = "opam_file_format.cmxa"
+plugin(byte) = "opam_file_format.cma"
+plugin(native) = "opam_file_format.cmxs"

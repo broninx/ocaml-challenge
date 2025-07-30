@@ -1,0 +1,155 @@
+(lang dune 3.19)
+(name cudf)
+(version 0.10)
+(sections (lib .) (libexec .) (bin ../../bin) (doc ../../doc/cudf))
+(files
+ (lib
+  (META
+   cudf.a
+   cudf.cma
+   cudf.cmi
+   cudf.cmt
+   cudf.cmti
+   cudf.cmx
+   cudf.cmxa
+   cudf.ml
+   cudf.mli
+   cudf_822_lexer.cmi
+   cudf_822_lexer.cmt
+   cudf_822_lexer.cmx
+   cudf_822_lexer.ml
+   cudf_822_parser.cmi
+   cudf_822_parser.cmt
+   cudf_822_parser.cmti
+   cudf_822_parser.cmx
+   cudf_822_parser.ml
+   cudf_822_parser.mli
+   cudf_checker.cmi
+   cudf_checker.cmt
+   cudf_checker.cmti
+   cudf_checker.cmx
+   cudf_checker.ml
+   cudf_checker.mli
+   cudf_conf.cmi
+   cudf_conf.cmt
+   cudf_conf.cmti
+   cudf_conf.cmx
+   cudf_conf.ml
+   cudf_conf.mli
+   cudf_parser.cmi
+   cudf_parser.cmt
+   cudf_parser.cmti
+   cudf_parser.cmx
+   cudf_parser.ml
+   cudf_parser.mli
+   cudf_printer.cmi
+   cudf_printer.cmt
+   cudf_printer.cmti
+   cudf_printer.cmx
+   cudf_printer.ml
+   cudf_printer.mli
+   cudf_type_lexer.cmi
+   cudf_type_lexer.cmt
+   cudf_type_lexer.cmx
+   cudf_type_lexer.ml
+   cudf_type_parser.cmi
+   cudf_type_parser.cmt
+   cudf_type_parser.cmti
+   cudf_type_parser.cmx
+   cudf_type_parser.ml
+   cudf_type_parser.mli
+   cudf_types.cmi
+   cudf_types.cmt
+   cudf_types.cmti
+   cudf_types.cmx
+   cudf_types.ml
+   cudf_types.mli
+   cudf_types_pp.cmi
+   cudf_types_pp.cmt
+   cudf_types_pp.cmti
+   cudf_types_pp.cmx
+   cudf_types_pp.ml
+   cudf_types_pp.mli
+   dune-package
+   opam))
+ (libexec (cudf.cmxs))
+ (bin (cudf-check cudf-parse-822))
+ (doc (README)))
+(library
+ (name cudf)
+ (kind normal)
+ (archives (byte cudf.cma) (native cudf.cmxa))
+ (plugins (byte cudf.cma) (native cudf.cmxs))
+ (native_archives cudf.a)
+ (requires extlib)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name cudf)
+    (visibility public)
+    (source (path Cudf) (intf (path cudf.mli)) (impl (path cudf.ml))))
+   (module
+    (obj_name cudf_822_lexer)
+    (visibility public)
+    (source (path Cudf_822_lexer) (impl (path cudf_822_lexer.ml))))
+   (module
+    (obj_name cudf_822_parser)
+    (visibility public)
+    (source
+     (path Cudf_822_parser)
+     (intf (path cudf_822_parser.mli))
+     (impl (path cudf_822_parser.ml))))
+   (module
+    (obj_name cudf_checker)
+    (visibility public)
+    (source
+     (path Cudf_checker)
+     (intf (path cudf_checker.mli))
+     (impl (path cudf_checker.ml))))
+   (module
+    (obj_name cudf_conf)
+    (visibility public)
+    (source
+     (path Cudf_conf)
+     (intf (path cudf_conf.mli))
+     (impl (path cudf_conf.ml))))
+   (module
+    (obj_name cudf_parser)
+    (visibility public)
+    (source
+     (path Cudf_parser)
+     (intf (path cudf_parser.mli))
+     (impl (path cudf_parser.ml))))
+   (module
+    (obj_name cudf_printer)
+    (visibility public)
+    (source
+     (path Cudf_printer)
+     (intf (path cudf_printer.mli))
+     (impl (path cudf_printer.ml))))
+   (module
+    (obj_name cudf_type_lexer)
+    (visibility public)
+    (source (path Cudf_type_lexer) (impl (path cudf_type_lexer.ml))))
+   (module
+    (obj_name cudf_type_parser)
+    (visibility public)
+    (source
+     (path Cudf_type_parser)
+     (intf (path cudf_type_parser.mli))
+     (impl (path cudf_type_parser.ml))))
+   (module
+    (obj_name cudf_types)
+    (visibility public)
+    (source
+     (path Cudf_types)
+     (intf (path cudf_types.mli))
+     (impl (path cudf_types.ml))))
+   (module
+    (obj_name cudf_types_pp)
+    (visibility public)
+    (source
+     (path Cudf_types_pp)
+     (intf (path cudf_types_pp.mli))
+     (impl (path cudf_types_pp.ml)))))))

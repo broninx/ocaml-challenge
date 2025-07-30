@@ -1,0 +1,12 @@
+opam-version: "2.0"
+added: [
+  "bin/opam-test" {"F:S17786976T1753910180.04"}
+  "doc/opam-test" {"D"}
+  "doc/opam-test/CHANGES.md" {"F:S590T1753910180.04"}
+  "doc/opam-test/LICENSE.txt" {"F:S1074T1753910180.04"}
+  "doc/opam-test/README.md" {"F:S288T1753910180.04"}
+  "lib/opam-test" {"D"}
+  "lib/opam-test/META" {"F:S0T1753910180.04"}
+  "lib/opam-test/dune-package" {"F:S212T1753910180.04"}
+  "lib/opam-test/opam" {"F:S510T1753910180.04"}
+]

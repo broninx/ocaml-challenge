@@ -1,0 +1,21 @@
+(library
+ (name mccs_hostglpk_static)
+ (public_name mccs.glpk.static)
+ (modules ocaml_mccs_glpk)
+ (c_library_flags
+  :standard
+  (:include clibs.sexp))
+ (wrapped false))
+
+(executable
+ (name context_flags)
+ (modules context_flags)
+ (libraries compiler-libs.common))
+
+(rule
+ (targets cflags.sexp)
+ (deps context_flags.exe)
+ (action
+  (with-stdout-to
+   %{targets}
+   (run %{deps} clibs static))))
