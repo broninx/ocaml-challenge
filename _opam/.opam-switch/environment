@@ -1,0 +1,3 @@
+OPAM_SWITCH_PREFIX	=	/home/broninx/uni/alf/ocaml-challenge/_opam	Prefix\ of\ the\ current\ opam\ switch
+MANPATH	=:	/home/broninx/uni/alf/ocaml-challenge/_opam/man	Current\ opam\ switch\ man\ dir
+PATH	=+=	/home/broninx/uni/alf/ocaml-challenge/_opam/bin	Binary\ dir\ for\ opam\ switch\ /home/broninx/uni/alf/ocaml-challenge

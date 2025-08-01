@@ -1,0 +1,10 @@
+opam-version: "2.0"
+synopsis: "/home/broninx/uni/alf/ocaml-challenge"
+opam-root: "/home/broninx/.opam"
+paths {
+  
+}
+variables {
+  user: "broninx"
+  group: "broninx"
+}
